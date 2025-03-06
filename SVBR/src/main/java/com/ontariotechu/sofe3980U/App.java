@@ -10,8 +10,9 @@ import com.opencsv.*;
  * Evaluate Single Variable Binary Regression
  */
 public class App {
-    public static void main(String[] args) {
-        String filePath = "model_1.csv";
+
+	public static void SVBR(String Filepaths){
+		        String filePath = Filepaths;
         FileReader filereader;
         List<String[]> allData;
         
@@ -95,6 +96,7 @@ public class App {
         }
 
         // Print results
+        System.out.println("Results for: " + Filepaths);
         System.out.println("Binary Cross-Entropy (BCE): " + BCE);
         System.out.println("Confusion Matrix: ");
         System.out.println("TP: " + TP + " FP: " + FP);
@@ -104,5 +106,22 @@ public class App {
         System.out.println("Recall: " + recall);
         System.out.println("F1 Score: " + f1_score);
         System.out.println("AUC-ROC: " + auc);
+        System.out.println("\n\n");
     }
+
+
+    public static void main(String[] args) {
+
+    	String filePath1 = "model_1.csv";
+    	String filePath2 = "model_2.csv";
+    	String filePath3 = "model_3.csv";
+
+    	SVBR(filePath1);
+    	SVBR(filePath2);
+    	SVBR(filePath3);
+
+
+
+ 
+}
 }
